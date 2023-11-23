@@ -6,7 +6,7 @@ public class spr : MonoBehaviour
 {
     public bool ismoving = false;
     public float movementspeedsprint = 200;
-    public float movementspeed = 200;
+    
     
 
     // Update is called once per frame
