@@ -6,7 +6,9 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
-    [SerializeField] GameObject targetCam;
+    [SerializeField] Camera targetCam;
+    Vector2 turn;
+    Vector3 moveDirection;
 
     private void Start()
     {
@@ -24,18 +26,22 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
+            transform.position += targetCam.transform.forward * moveSpeed * Time.deltaTime;
         }
     }
 
     private void RotatePlayer()
     {
-        Quaternion startRot;
-        startRot = transform.rotation;
-
-        if(Input.GetAxisRaw("Mouse X") > startRot.x)
-        {
-            //new Vector3(Input.GetAxisRaw("Mouse X"),0,0) = targetCam.transform.rotation;
-        }
+        turn.x += Input.GetAxisRaw("Mouse X");
+        turn.y += Input.GetAxisRaw("Mouse Y");
+        transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0);
     }
+
+    /*
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + targetCam.transform.forward);
+    }
+    */
 }
