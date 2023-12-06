@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CreateRayCast : MonoBehaviour
 {
@@ -11,7 +9,7 @@ public class CreateRayCast : MonoBehaviour
 
     private void Awake()
     {
-        myPlayer = GetComponent<GameObject>();  
+        myPlayer = GetComponent<GameObject>();
     }
 
     void Update()
@@ -29,8 +27,6 @@ public class CreateRayCast : MonoBehaviour
                 transform.position += dir * Time.deltaTime;
             }
         }
-        
-
         Debug.DrawRay(transform.position, dir, Color.red);
     }
 

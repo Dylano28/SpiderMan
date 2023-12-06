@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Jumping : MonoBehaviour
@@ -14,7 +13,7 @@ public class Jumping : MonoBehaviour
 
     private void Awake()
     {
-        myRigidbody= GetComponent<Rigidbody>();
+        myRigidbody = GetComponent<Rigidbody>();
     }
 
     private void Update()
