@@ -1,11 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     [SerializeField] Camera targetCam;
     Vector2 turn;
-    Vector3 moveDirection;
 
     private void Start()
     {
@@ -25,20 +24,20 @@ public class Movement : MonoBehaviour
         {
             transform.position += targetCam.transform.forward * moveSpeed * Time.deltaTime;
         }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += -targetCam.transform.right * moveSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += targetCam.transform.right * moveSpeed * Time.deltaTime;
+        }
     }
 
     private void RotatePlayer()
     {
         turn.x += Input.GetAxisRaw("Mouse X");
         turn.y += Input.GetAxisRaw("Mouse Y");
-        transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0);
+        transform.localRotation = Quaternion.Euler(turn.y, turn.x, 0);
     }
-
-    /*
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + targetCam.transform.forward);
-    }
-    */
 }

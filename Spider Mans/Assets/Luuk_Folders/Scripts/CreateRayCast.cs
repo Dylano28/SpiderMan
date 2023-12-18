@@ -3,14 +3,9 @@
 public class CreateRayCast : MonoBehaviour
 {
     [SerializeField] float distance = 10f;
+    [SerializeField] float swingSpeed = 10f;
 
-    private GameObject myPlayer;
     private Transform currentBuilding;
-
-    private void Awake()
-    {
-        myPlayer = GetComponent<GameObject>();
-    }
 
     void Update()
     {
@@ -24,7 +19,7 @@ public class CreateRayCast : MonoBehaviour
         {
             if (Physics.Raycast(transform.position, dir, distance))
             {
-                transform.position += dir * Time.deltaTime;
+                transform.position += dir * swingSpeed * Time.deltaTime;
             }
         }
         Debug.DrawRay(transform.position, dir, Color.red);
