@@ -1,8 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Jumping : MonoBehaviour
 {
+    public bool grounded = false;
     [SerializeField] private float jumpHeight;
     private int JumpTime = 1;
 
@@ -29,6 +30,23 @@ public class Jumping : MonoBehaviour
             CanJump = false;
             StartCoroutine(JumpRoutine());
         }
+       
+    }
+    private void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.Space) && grounded)
+        {
+            GetComponent<Rigidbody>().AddForce(transform.up * 3, ForceMode.Impulse);
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        grounded = true;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        grounded = false;  
     }
 
     IEnumerator JumpRoutine()

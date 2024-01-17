@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -439,9 +439,6 @@ GameObject:
   - component: {fileID: 1453814546}
   - component: {fileID: 1453814545}
   - component: {fileID: 1453814544}
-  - component: {fileID: 1453814548}
-  - component: {fileID: 1453814547}
-  - component: {fileID: 1453814549}
   m_Layer: 0
   m_Name: Spiderman
   m_TagString: Untagged
@@ -514,58 +511,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1453814547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453814542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee07adfc6c6a13a439f65492cfce2991, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ismoving: 0
-  movementspeedsprint: 10
---- !u!114 &1453814548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453814542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fdcc93bd11e6dd4181c3890ef4e6a7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
---- !u!114 &1453814549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453814542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a0276ca51d0b4e4c9c58d9edbadd2ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pendulum:
-    Sp_tr: {fileID: 1453814546}
-    tetcher:
-      position: {x: 0, y: 0, z: 0}
-      tetcher_tr: {fileID: 1419364944631500056}
-    arm:
-      lenght: 10
-    sp:
-      velocity: {x: 0, y: 0, z: 0}
-      gravity: 20
-      gravityDirection: {x: 0, y: 1, z: 0}
-      drag: 0.001
-      maximumSpeed: 50
 --- !u!1 &2031079441
 GameObject:
   m_ObjectHideFlags: 0

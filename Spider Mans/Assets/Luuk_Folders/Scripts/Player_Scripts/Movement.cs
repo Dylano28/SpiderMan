@@ -36,8 +36,9 @@ public class Movement : MonoBehaviour
 
     private void RotatePlayer()
     {
-        turn.x += Input.GetAxisRaw("Mouse X");
-        turn.y += Input.GetAxisRaw("Mouse Y");
-        transform.localRotation = Quaternion.Euler(turn.y, turn.x, 0);
+        //turn.x += Input.GetAxisRaw("Mouse X");
+       // turn.y += Input.GetAxisRaw("Mouse Y");
+       // transform.localRotation = Quaternion.Euler(turn.y * 2, turn.x, 0);
+
     }
 }
