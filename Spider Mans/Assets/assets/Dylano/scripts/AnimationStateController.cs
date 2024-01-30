@@ -17,6 +17,8 @@ public class AnimatorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        anim.SetBool("walk", Input.GetAxis("Horizontal") + Input.GetAxis("Vertical") != 0);
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             anim.Play("jump");
