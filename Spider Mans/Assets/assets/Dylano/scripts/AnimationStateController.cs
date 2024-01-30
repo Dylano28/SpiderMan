@@ -2,32 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationStateController : MonoBehaviour
+public class AnimatorController : MonoBehaviour
 {
-    Animator animator;
-    int IsWalkingHash;
+    Animator anim;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        IsWalkingHash = Animator.StringToHash("walk");
+        //Getting the animator component we want to use.
+        anim = gameObject.GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool IsWalking = animator.GetBool(IsWalkingHash);
-        bool forwardPressed = Input.GetKey("w");
-        if (!IsWalking && forwardPressed)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetBool("walk", true);
-        }
-        if (IsWalking && !forwardPressed)
-        {
-            animator.SetBool(IsWalkingHash, false);
+            anim.Play("jump");
         }
 
+        if (Input.GetKeyDown("w"))
+        {
+            anim.Play("walk");
+        }
+        else if (Input.GetKeyDown("a"))
+        {
+            anim.Play("walk");
+        }
+        else if (Input.GetKeyDown("d"))
+        {
+            anim.Play("walk");
+        }
+        else if (Input.GetKeyDown("s"))
+        {
+            anim.Play("walk");
+        }
 
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            anim.Play("run");
+        }
     }
 }

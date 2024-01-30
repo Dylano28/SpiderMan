@@ -52,6 +52,6 @@ public class Jumping : MonoBehaviour
     IEnumerator JumpRoutine()
     {
         yield return new WaitForSeconds(JumpTime);
-        //CanJump = true;
+        CanJump = true;
     }
 }
